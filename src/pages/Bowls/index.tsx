@@ -1,6 +1,6 @@
 import React from 'react'
-import bowls from './fixtures'
 import { ProductList } from 'components'
+import bowls from './fixtures'
 
 const Bowls: React.FC = () => (
   <div>

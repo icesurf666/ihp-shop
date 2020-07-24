@@ -1,9 +1,9 @@
-import React from "react";
-import useCartStore from "hooks/useCartStore";
-import { IconButton } from "@material-ui/core";
-import DeleteIcon from "@material-ui/icons/Delete";
-import RemoveIcon from "@material-ui/icons/Remove";
-import AddIcon from "@material-ui/icons/Add";
+import React from 'react'
+import useCartStore from 'hooks/useCartStore'
+import { IconButton } from '@material-ui/core'
+import DeleteIcon from '@material-ui/icons/Delete'
+import RemoveIcon from '@material-ui/icons/Remove'
+import AddIcon from '@material-ui/icons/Add'
 
 interface IProps {
   selectableRows: number;
@@ -15,25 +15,25 @@ const CustomColumns = ({ selectableRows }: IProps): JSX.Element => {
     removeItemCart,
     cart,
     removeItemCount,
-  } = useCartStore();
+  } = useCartStore()
 
-  const handleDelete = (selectableRows: number) => {
+  const handleDelete = (select: number) => {
     cart
-      .filter((item, index) => index === selectableRows)
-      .map((remove) => removeItemCart(remove));
-  };
+      .filter((item, index) => index === select)
+      .map((remove) => removeItemCart(remove))
+  }
 
-  const handleAdd = (selectableRows: number) => {
+  const handleAdd = (select: number) => {
     cart
-      .filter((item, index) => index === selectableRows)
-      .map((add) => addItemToCart(add));
-  };
+      .filter((item, index) => index === select)
+      .map((add) => addItemToCart(add))
+  }
 
-  const handleRemove = (selectableRows: number) => {
+  const handleRemove = (select: number) => {
     cart
-      .filter((item, index) => index === selectableRows)
-      .map((add) => removeItemCount(add));
-  };
+      .filter((item, index) => index === select)
+      .map((add) => removeItemCount(add))
+  }
 
   return (
     <>
@@ -44,10 +44,10 @@ const CustomColumns = ({ selectableRows }: IProps): JSX.Element => {
         <AddIcon />
       </IconButton>
       <IconButton onClick={() => handleDelete(selectableRows)}>
-        <DeleteIcon color="error" />
+        <DeleteIcon color='error' />
       </IconButton>
     </>
-  );
-};
+  )
+}
 
-export default CustomColumns;
+export default CustomColumns

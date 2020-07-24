@@ -1,9 +1,8 @@
 import React from 'react'
 import { Grid } from '@material-ui/core'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import bowls from '../Bowls/fixtures'
 import { Slider, Desc } from 'components'
-
+import bowls from '../Bowls/fixtures'
 
 const Bowl: React.FC<RouteComponentProps<{id: string}>> = ({ match }) => {
   const id = Number(match.params.id)

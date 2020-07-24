@@ -39,15 +39,15 @@ const CartTable: React.FC = () => {
 
   const onResetCart = useCallback(() => {
     clear()
-  }, [])
+  }, [clear])
 
   const onSubmit = (values: IValues) => {
     axios.post('api/sendMail', { name: values.name, email: values.email, cart })
   }
 
   const total = cart.map((item) => {
-    const total = item.product.price * item.count
-    return { total }
+    const totalPrice = item.product.price * item.count
+    return { totalPrice }
   })
 
   const sum = sumBy(total, 'total')

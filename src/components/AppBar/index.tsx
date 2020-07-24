@@ -10,12 +10,10 @@ import { useStyles } from './styles'
 import DrawerStuff from './components/DrawerStuff'
 
 interface IProps {
-  window?: () => Window;
   children: React.ReactNode;
 }
 
 const ResponsiveDrawer = (props: IProps) => {
-  const { window } = props
   const classes = useStyles()
   const theme = useTheme()
   const [mobileOpen, setMobileOpen] = React.useState(false)
@@ -26,8 +24,6 @@ const ResponsiveDrawer = (props: IProps) => {
 
   const { cart } = useCartStore()
   const countProduct = sumBy(cart, 'count')
-
-  const container = window !== undefined ? () => window().document.body : undefined
 
   return (
     <div className={classes.root}>
@@ -60,7 +56,6 @@ const ResponsiveDrawer = (props: IProps) => {
       <nav className={classes.drawer} aria-label='mailbox folders'>
         <Hidden smUp implementation='css'>
           <Drawer
-            container={container}
             variant='temporary'
             anchor={theme.direction === 'rtl' ? 'right' : 'left'}
             open={mobileOpen}

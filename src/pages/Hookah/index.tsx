@@ -1,9 +1,8 @@
 import React from 'react'
 import { Grid } from '@material-ui/core'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import hookahs from '../Hookahs/fixtures'
 import { Slider, Desc } from 'components'
-
+import hookahs from '../Hookahs/fixtures'
 
 const Hookah: React.FC<RouteComponentProps<{id: string}>> = ({ match }) => {
   const id = Number(match.params.id)

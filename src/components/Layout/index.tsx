@@ -2,9 +2,9 @@ import React from 'react'
 import { Container, CssBaseline } from '@material-ui/core'
 import { BrowserRouter as Router, Route } from 'react-router-dom'
 import { Home, ShishaTeas, Bowls, ShishaTea, Hookahs, Hookah, About, Cart } from 'pages'
+import Bowl from 'pages/Bowl'
 import CustomAppBar from '../AppBar'
 import { useStyles } from './styles'
-import Bowl from 'pages/Bowl'
 
 const Layout = () => {
   const classes = useStyles()

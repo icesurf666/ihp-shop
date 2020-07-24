@@ -19,7 +19,7 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
   const { addItemToCart } = useCartStore()
   const addToCart = useCallback(() => {
     addItemToCart(item)
-  }, [])
+  }, [addItemToCart, item])
 
   return (
     <Card className={classes.root}>
@@ -40,7 +40,7 @@ const ProductCard: React.FC<IProps> = ({ product }) => {
         </CardContent>
       </CardActionArea>
       <CardActions className={classes.card}>
-      <Typography>${product.price}</Typography>
+        <Typography>${product.price}</Typography>
         <Button onClick={addToCart} size='small' color='secondary'>
           Add to cart
         </Button>

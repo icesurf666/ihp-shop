@@ -4,5 +4,5 @@ export const useStyles = makeStyles({
   submitBtn: {
     marginTop: 20,
     marginBottom: 20,
-  }
+  },
 })

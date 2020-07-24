@@ -1,8 +1,8 @@
 import React from 'react'
 import { Grid } from '@material-ui/core'
 import { RouteComponentProps, withRouter } from 'react-router-dom'
-import teas from '../ShishaTeas/fixtures'
 import { Slider, Desc } from 'components'
+import teas from '../ShishaTeas/fixtures'
 
 const ShishaTea: React.FC<RouteComponentProps<{id: string}>> = ({ match }) => {
   const id = Number(match.params.id)
