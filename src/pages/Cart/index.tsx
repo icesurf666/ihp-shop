@@ -15,8 +15,10 @@ import { baseColumns } from './utils/columns'
 import { IValues } from './types'
 import CartForm from './components/CartForm'
 import CustomColumns from './components/CustomColumns'
+import { useStyles } from './styles'
 
 const CartTable: React.FC = () => {
+  const classes = useStyles()
   const { cart, clear } = useCartStore()
 
   const columns = [
@@ -71,8 +73,8 @@ const CartTable: React.FC = () => {
           />
         </Grid>
         <Grid item xs={3}>
-          <Paper style={{ padding: 16 }}>
-            <Typography variant='h5' style={{ marginTop: 10 }}>
+          <Paper className={classes.paper}>
+            <Typography variant='h5' className={classes.totalText}>
               Total amount: ${sum}
             </Typography>
             <CartForm onSubmit={onSubmit} />

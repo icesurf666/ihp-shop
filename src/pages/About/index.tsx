@@ -1,9 +1,11 @@
 import React from 'react'
+import { useStyles } from './styles'
 
 const About: React.FC = () => {
   const br = '\n'
+  const classes = useStyles()
   return (
-    <div style={{ whiteSpace: 'pre-line', fontSize: 18 }}>
+    <div className={classes.text}>
       Good afternoon! {br}
       We hope that you are well, and your business is up and running.{br}
       We understand that the hospitality sector has been experiencing
